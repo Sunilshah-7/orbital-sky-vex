@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vex_Space</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <style>
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+            width: 100%;
+            background-image: url('https://i.ibb.co/R4rc4Vj/satellite.jpg');
+            background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+
+        }
+        
+        .row-header {
+            margin: 0px;
+            padding: 0px 0px;
+        }
+        
+        .row-content {
+            margin: 0px;
+            padding: 50px 0px;
+            border-bottom: 1px ridge;
+            min-height: 400px;
+            color: #ffffff;
+        }
+        
+        .jumbotron {
+            margin: 0px;
+            padding: 70px 30px;
+            background-color: #2e1749;
+            color: floralwhite;
+        }
+        
+        .targetDiv {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+        
+        #datas {
+            text-align: left;
+            margin: 0px;
+        }
+        
+        header {
+            overflow: hidden;
+            background: #111;
+        }
+    </style>
+    <header class="jumbotron">
+        <div clas="container">
+            <div class="row row-header">
+                <div class="col-10 col-sm-6" id="canvas">
+                    <h1>Observatory</h1>
+                </div>
+                <div class="col-2 col-sm-6">
+                    <img src="https://i.ibb.co/XYmKV5z/logo.png">
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row row-content">
+            <h2><strong>Wanna see the count of observatory per revolution.</strong></h2>
+            <h3>You got it↓↓↓</h3>
+            <img src="https://i.ibb.co/Ny4grHJ/Count-of-Observatory-Resolution.png">
+        </div>
+        <div class="row" id="datas">
+            <h1>Select the time interval</h1>
+        </div>
+        <div class="row row-content" id="datas">
+            <div class="col-md-3">
+                <select class="form-control" onchange="changeFunc()" id="selectbox">
+                    <option value="" disabled selected hidden>Select Start date interval</option>
+                    <option value="1">1957-1968</option>
+                    <option value="2">1968-1980</option>
+                    <option value="3">1980-1991</option>
+                    <option value="4">1991-2002</option>
+                    <option value="5">2002-2013</option>
+                    <option value="6">2013-2024</option>
+                </select>
+            </div>
+            <div class="targetDiv">
+                <iframe id="myframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS2LZCXnHKTaxuccdXMCtJYSN3U12v5Q1Md733OQebeZkIedxQSVTFe6a9lmP0UWhOXoKQmttAc0NIN/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" allowfullscreen="true" width="150%"
+                    height="1000" style="border:2px solid black"></iframe>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function changeFunc() {
+            var selectBox = document.getElementById("selectbox");
+            var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+            if (selectedValue == "1") {
+                document.getElementById("myframe").src = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTm_iHjluugszo0fGIq_Or6QnxVPRiPgFp6L841LxpoOjN1_UeKJdJEXkmZhQOxjCWoglM1q-_f92IW/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false";
+            } else if (selectedValue == "2") {
+                document.getElementById("myframe").src = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQm5WvQS4zcIDBjtOWzn-9-dzA5x6tAs_9_14bGhKMr54UaaSsa4821VtD3h63crYlvBhpc56Ks3sGP/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false";
+            } else if (selectedValue == "3") {
+                document.getElementById("myframe").src = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQfLZa2A_iBHBjeEFigC2TWJ74LwwdxrTNFyC7e_Y8DhRProAkmaue2psDsUgCl_kuki1M2zdUbWN0z/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false";
+            } else if (selectedValue == "4") {
+                document.getElementById("myframe").src = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRYtBo2WFzkQlpSpxrlNBkKca0jC5LF9CFCsljE_pNjp7-MCZDsXitdyZlMOnmDnuNtr08b4bTRaZyH/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false";
+            } else if (selectedValue == "5") {
+                document.getElementById("myframe").src = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQh8SEeRgtwkmKb9x8QomydO725Ofwo7QkLwcBMo_uVnaerSOT-BghvVJGuYTiIHk6PCJLzKMgPoAiT/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false";
+            } else if (selectedValue == "6") {
+                document.getElementById("myframe").src = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQAj2QZd1aMvnG5A8rUVOsrsRb9wFZZHouxK8q0Wlup8Vk1f4xV09euZbpmZ-8XAnZzG-1-f-4O26Rd/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
